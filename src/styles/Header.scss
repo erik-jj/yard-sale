@@ -5,6 +5,9 @@ nav {
 	justify-content: space-between;
 	padding: 0 24px;
 	border-bottom: 1px solid var(--very-light-pink);
+	position:sticky;
+	top: 0px;
+	background-color: white;
 }
 .menu {
 	display: none;
@@ -48,6 +51,14 @@ nav {
 .navbar-shopping-cart {
 	position: relative;
 }
+.navbar-shopping-cart:hover{
+	cursor: pointer;
+
+}
+.navbar-email:hover  {
+	cursor: pointer;
+	color: var(--hospital-green);
+}
 .navbar-shopping-cart div {
 	width: 16px;
 	height: 16px;
@@ -62,6 +73,8 @@ nav {
 	justify-content: center;
 	align-items: center;
 }
+
+
 @media (max-width: 640px) {
 	.menu {
 		display: block;

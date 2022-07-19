@@ -2,9 +2,9 @@
 
 .MyOrder {
 	width: 360px;
-	padding: 24px;
+	padding: 18px;
 	box-sizing: border-box;
-	position: absolute;
+	position: fixed;
 	right: 0;
 	background-color: white;
 	top: 60px;
@@ -43,6 +43,31 @@
 .order p:nth-child(2) {
 	text-align: end;
 	font-weight: bold;
+}
+.order-container {
+	max-height: 400px;
+	overflow: hidden;
+	overflow-y: scroll;
+	padding-right: 8px;
+	margin-bottom: 8px;
+}
+
+.order-container::-webkit-scrollbar {
+	width: 8px;
+}
+
+.order-container::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+
+.order-container::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+
+.order-container::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }
 
 .primary-button {

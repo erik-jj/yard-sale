@@ -8,13 +8,13 @@ import AppContext from '../context/AppContext';
 import MyOrder from '../containers/MyOrder'
 
 const Header = () => {
-	const [toggle,setToggle] = useState(false);
+	const [toggleMenu,setToggle] = useState(false);
 	const [toggleOrders, setToggleOrders] = useState(false);
 	const {state} = useContext(AppContext);
 
 
 	const handleToggle = () =>  {
-		setToggle(!toogle);
+		setToggle(!toggleMenu);
 	}
 
 
@@ -46,8 +46,9 @@ const Header = () => {
 			</div>
 			<div className="navbar-right">
 				<ul>
-					<li className="navbar-email" onClick={handleToggle}>
-					platzi@example.com
+					<li className="navbar-email"
+					 onClick={handleToggle}>
+					email@example.com
 					</li>
 					<li 
 					className="navbar-shopping-cart" 
@@ -58,7 +59,7 @@ const Header = () => {
 					</li>
 				</ul>
 			</div>
-			{toggle && <Menu />}
+			{toggleMenu && <Menu />}
 			{toggleOrders && <MyOrder/>}
 		</nav>
 	);
