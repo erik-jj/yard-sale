@@ -1,15 +1,22 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import '../styles/ProductItem.scss';
+import addedToCartImage from '../assets/icons/bt_added_to_cart.svg';
 import addToCartImage from '../assets/icons/bt_add_to_cart.svg';
 import AppContext from '../context/AppContext'
 import useInitialState from '../hooks/useInitialState.js'
 
 const ProductItem = ({product}) => {
-	const {addToCart} = useContext(AppContext);
+	const {state,addToCart} = useContext(AppContext);
+	//const {icon,setIcon} = useState(addToCartImage);
+
 
 	const handleClick = item => {	
-		addToCart(item);
+		isProductAdded(item) ? alert('The product has already been added'): addToCart(item);		
+		
 	}
+
+	const isProductAdded = (item) => state.cart.includes(item) ? true: false;
+	
 
 	return (
 		<div className="ProductItem">
@@ -19,8 +26,10 @@ const ProductItem = ({product}) => {
 					<p>${product.price}</p>
 					<p>{product.title}</p>
 				</div>
-				<figure onClick={()=> handleClick(product)} >
-					<img src={addToCartImage} alt="" />
+				<figure className="add-to-cart-img" onClick={()=> {handleClick(product)}}  >
+					<img 
+					src={isProductAdded(product)?addedToCartImage:addToCartImage} 
+					alt="add-to-cart" />
 				</figure>
 			</div>
 		</div>

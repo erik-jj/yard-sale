@@ -12,6 +12,9 @@ nav {
 .menu {
 	display: none;
 }
+.menu:hover{
+	cursor:pointer;
+}
 .nav-logo {
 	width: 100px;
 }
@@ -78,11 +81,15 @@ nav {
 @media (max-width: 640px) {
 	.menu {
 		display: block;
+		
 	}
+	
 	.navbar-left ul {
 		display: none;
 	}
 	.navbar-email {
 		display: none;
 	}
+	
 }
+

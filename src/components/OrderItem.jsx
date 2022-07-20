@@ -16,7 +16,7 @@ const OrderItem = ({product}) => {
 			</figure>
 			<p>{product.title}</p>
 			<p>${product.price}</p>
-			<img src={closeImage} alt="close" onClick={()=>handleRemove(product)} />
+			<img className="RemoveItemImage" src={closeImage} alt="close" onClick={()=>handleRemove(product)} />
 		</div>
 	);
 }
